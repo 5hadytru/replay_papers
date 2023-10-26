@@ -15,7 +15,7 @@ A structured catalog of replay papers in the continual learning literature. Can 
   - Generative model for activations (https://www.nature.com/articles/s41467-020-17866-2)
 
 2. The algorithm for selecting the contents of the buffer
-- In my experience (in CL with pre-trained models), simple diversity + setting a maximum loss for items in the replay buffer works very well
+- In my experience (in CL with pre-trained models, where a post-facto replay buffer selection method is necessary), simple diversity + setting a maximum loss for items in the replay buffer works very well
 - Insights:
   - Store "easy"/prototypical samples
     - Memory Population in Continual Learning via Outlier Elimination (https://arxiv.org/pdf/2207.01145.pdf)
