@@ -1,6 +1,6 @@
 # Replay Papers
 
-A structured catalog of replay papers in the continual learning literature
+A structured catalog of replay papers in the continual learning literature. Can act as an intro for noobs.
 
 ### What are the main design decisions when using replay for continual learning?
 
