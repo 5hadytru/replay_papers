@@ -4,12 +4,6 @@ A structured catalog of replay papers in the continual learning literature. Can 
 
 ### What are the main design decisions when using replay for continual learning?
 
-NOTE: what people refer to as 'ER' (baseline) refers to:
-  1. Storing raw inputs in the replay buffer
-  2. Uniformly sampling your data stream for storage in the buffer
-  3. Retrieving samples from your replay buffer with uniform probability
-  4. Using the same loss function for your new samples and replayed samples
-
 1. The type(s) of data in replay buffer
 - What kind of data am I storing in my replay buffer? Is my replay 'buffer' generative?
 - Am I replaying in the input space, in activation space, or both?
