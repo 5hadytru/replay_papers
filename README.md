@@ -4,6 +4,12 @@ A structured catalog of replay papers in the continual learning literature. Can 
 
 ### What are the main design decisions when using replay for continual learning?
 
+NOTE: what people refer to as 'ER' (baseline) refers to:
+  1. Storing raw inputs in the replay buffer
+  2. Uniformly sampling your data stream for storage in the buffer
+  3. Retrieving samples from your replay buffer with uniform probability
+  4. Using the same loss function for your new samples and replayed samples
+
 1. The type(s) of data in replay buffer
 - What kind of data am I storing in my replay buffer? Is my replay 'buffer' generative?
 - Am I replaying in the input space, in activation space, or both?
@@ -11,7 +17,7 @@ A structured catalog of replay papers in the continual learning literature. Can 
   - Raw inputs (https://arxiv.org/abs/1611.07725)
   - Raw activations (https://arxiv.org/abs/2004.00713)
   - Raw logits (https://arxiv.org/abs/2004.07211)
-  - Generative model for inputs (https://arxiv.org/abs/1705.08690)
+  - Generative model for inputs (https://arxiv.org/abs/1705.08690, https://arxiv.org/abs/2002.10211)
   - Generative model for activations (https://www.nature.com/articles/s41467-020-17866-2)
 
 2. The algorithm for selecting the contents of the buffer
@@ -37,6 +43,9 @@ A structured catalog of replay papers in the continual learning literature. Can 
       - Learning in deep neural networks and brains with similarity-weighted interleaved learning (https://www.pnas.org/doi/full/10.1073/pnas.2115229119)
   - Can try a brute force approach (retrieve n samples from replay buffer and see which samples have the highest loss increases after the current gradient step)
     - Online Continual Learning with Maximally Interfered Retrieval (https://arxiv.org/abs/1908.04742)
+  - Across the model's 'lifetime' of learning, the prototypical-ness of the samples you're replaying for a given class should be inversely proportional to how many samples you've replayed from that class, up to the current timestep (https://arxiv.org/abs/2308.13646)
 
 4. The algorithm for regularizing the network such that information contained in replayed samples is exploited properly
+- Remember that 'ER' refers to using the same loss function you use for new samples for replayed samples
+- Distilling logits is a very good approach (https://arxiv.org/abs/2004.07211)
 - 
